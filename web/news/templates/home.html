@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{%block title%}
+Home Page {%if user.is_authenticated%}{{user.username}}{%endif%}
+{%endblock title%}
+{%block content%}
+<h1>Welcome to our News Website</h1>
+{% if user.is_authenticated %}
+<p>Hi {{ user.username }}!</p>
+<a href="{%url 'logout'%}">Log Out</a>
+<h2>News Classes</h2>
+
+{% else %}
+<p>You are not logged in.</p>
+<a href="{% url 'login' %}">Log In</a>
+<br>
+<a href="{% url 'signup' %}">Sign Up</a>
+
+{% endif %}
+<ul>
+{%for i in News.NewsTitle.fiedl.choices%}
+<li>
+  <a href="{%url ''%}">{{i}}</a>
+</li>
+{%endfor%}
+</ul>
+{%endblock content%}

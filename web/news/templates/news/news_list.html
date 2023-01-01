@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{%block title%}{{topic}}{%endblock title%}
+{%block content%}
+<h1>News({{topic}})</h1>
+<ul>
+{% for news in object_list %}
+    <li>(count:{{news.ViewCounter}}, id:{{news.id}})<a href="{%url 'news-detail' 'Politics' news.slug%}">{{ news.NewsTitle }}</a></li>
+{% empty %}
+    <p>No News yet.</p>
+{% endfor %}
+</ul>
+Go back to the list of <a href="{%url 'news-topics' %}">Topics</a>
+{%endblock content%}

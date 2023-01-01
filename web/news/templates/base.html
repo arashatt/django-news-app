@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{% block title %}Welcome{% endblock %}</title>
+ {%block scripts%}{% endblock %}
+</head>
+<body>
+  {%if user.is_authenticated%}
+  Hello {{user.username}}
+  {%endif%}
+  {% block content %}<{% endblock %}
+  {%if user.is_authenticated%}
+  <p>click here for <a href="{%url 'logout'%}">logout</a></p>  
+  {%endif%}
+
+</body>
+</html>

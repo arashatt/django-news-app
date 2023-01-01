@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block scripts%}<script src="http://code.jquery.com/jquery-latest.min.js"></script>{% endblock scripts%} 
+{% block title %}{{ object.slug}}{% endblock title%}
+{%block content%}
+<h1>{{ object.NewsTitle }}</h1>
+<p>{{ object.NewsBody }}</p>
+<div>
+    <p>number of visits: {{ object.ViewCounter}}
+        <br>
+        Topic: {{ object.NewsClass }}
+        <br>
+        Go back to the list of <a href="{%url 'news-topics' %}">Topics</a>
+    </p>
+</div>
+{%endblock content%}

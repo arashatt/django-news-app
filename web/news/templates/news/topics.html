@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+{% block title %}topics{% endblock title%}
+{%block content%}
+<ul>
+    {%for topic in object_list%}
+    <li><a href="{%url 'news-list' topic.0%}">{{topic.0}}</a></li>
+    {%endfor%}
+    </ul>
+
+
+{%endblock content%}

@@ -1,0 +1,6 @@
+<ul>
+{% for Class in NewsClass.NewsClass%}
+{{ Class.1}}
+
+{% endfor %}
+</ul>
